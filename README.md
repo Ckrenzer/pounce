@@ -1,6 +1,6 @@
 # Pounce
 Provides custom command line functions tailored to the maintainer's liking.
-Though the maintainer created it for himself, the *pounce* command line extensions are for anyone to use.!
+Though the maintainer created it for himself, the *pounce* command line extensions are for anyone to use!
 
 
 # Getting Started
