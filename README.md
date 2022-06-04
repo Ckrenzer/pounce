@@ -10,9 +10,8 @@ Though the maintainer created it for himself, the *pounce* command line extensio
 # File Hierarchy
 ```bash
 ├── src
-│   ├── control.sh
-│   └── scripts
-│        └── ls.R
+│   └── ls.R
+├── control.sh
 ├── test
 ├── README.md
 ├── LICENSE
@@ -20,7 +19,8 @@ Though the maintainer created it for himself, the *pounce* command line extensio
 ```
 
 **src:** Contains files used to implement all functionality in *pounce*.
-1. **control.sh:** Provides a wrapper around the code in **scripts/** to easily integrate with the command line.
 1. **scripts:** Contains the code used in the command line extensions.
+
+**control.sh:** Provides a wrapper around the code in **scripts/** to easily integrate with the command line.
 
 **test:** Contains unit tests to ensure the functions work as intended.
