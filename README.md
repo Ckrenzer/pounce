@@ -33,6 +33,8 @@ Just do an occasional `git pull` and you'll receive new functionality as it's de
 
 
 # Commands
+*Note: All commands have a help option. Type `command --help` to view it's help page.*
+
 
 `ls`: Provides a prettier alternative to the shell's `ls()`.
 
