@@ -93,7 +93,7 @@ if(any(args == "--help")){
                   sprintf("%s %s\n\t\t\tNote: %s",
                           "The path to the directories (defaults to pwd).",
                           "Accepts both relative and absolute paths.",
-                          "SPECIFIED DIRECTORIES MUST CONTAIN A FORWARD SLASH (/)!"),
+                          "A DIRECTORY NAME MUST CONTAIN AT LEAST ONE FORWARD SLASH (/)!"),
                   sprintf("%s %s\n\t\t\tNote: %s %s",
                           "A regular expression identifying the files to use.",
                           "Leave blank to identify all files.",
