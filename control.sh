@@ -5,5 +5,3 @@
 function ls(){
   rscript "${pouncepath}/src/ls.R" "$@"
 }
-
-
