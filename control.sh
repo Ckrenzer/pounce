@@ -3,5 +3,5 @@
 # Wrappers
 # Custom version of the `ls` command
 function ls(){
-  rscript "${pouncepath}/src/ls.R" "$@"
+  rscript "${POUNCEPATH}/src/ls.R" "$@"
 }
