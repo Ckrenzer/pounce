@@ -1,6 +1,6 @@
 # Pounce
 Provides custom command line functions tailored to the maintainer's liking.
-The *pounce* command line extensions are hosted here for anyone to use.
+Though the maintainer created it for himself, the *pounce* command line extensions are for anyone to use.!
 
 
 # Getting Started
@@ -18,8 +18,6 @@ The *pounce* command line extensions are hosted here for anyone to use.
 ├── LICENSE
 └── .gitignore
 ```
-
-## About
 
 **src:** Contains files used to implement all functionality in *pounce*.
 1. **scripts:** Contains the code used in the command line extensions.
