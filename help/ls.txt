@@ -1,0 +1,28 @@
+Provides information about the files in the input directory.
+The order in which the arguments are provided does not matter.
+
+
+
+Options:
+  --help            Prints this help page.
+
+  <<path>>          The path to the directories (defaults to pwd). Accepts both relative and absolute paths.
+      Note: A DIRECTORY NAME MUST CONTAIN AT LEAST ONE FORWARD SLASH (/)!
+
+  <<regex>>         A regular expression identifying the files to use. Leave blank to identify all files.
+      Note: Accepts a regex using the syntax of R, not BASH. Place pattern in quotes if the pattern contains whitespace.
+
+
+
+Examples:
+  List all files in C:/Users
+      ls C:/Users
+
+  List all files in a subdirectory called 'projects/'
+      ls projects/
+
+  List all text files in the current directory
+      ls \\.txt$
+
+  List all .csv files in a subdirectory called 'csv data/'
+      ls "csv data/" \\.csv$

@@ -7,5 +7,5 @@ printf "You can effectively remove Pounce by commenting out the Pounce source ca
 # Wrappers
 # Custom version of the `ls` command
 function ls(){
-  rscript "${POUNCEPATH}/src/ls.R" "$@"
+  rscript "${POUNCEPATH}/src/ls.R" "${COLUMNS}" "$@"
 }
