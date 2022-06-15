@@ -38,6 +38,7 @@ Just do an occasional `git pull` and you'll receive new functionality as it's de
 
 `ls`: Provides a prettier alternative to the shell's `ls()`.
 
+`rename`: Renames files in the working directory based on a fixed pattern.
 
 # Known Bugs and Issues
 
@@ -49,10 +50,18 @@ To fix this, simply remove the `POUNCEPATH="path/to/pounce"` and `source "${POUN
 
 # File Hierarchy
 ```bash
+├── help
+│   └── ls.txt
+│   └── rename.txt
 ├── src
-│   └── ls.R
-├── control.sh
+│   └── ls/
+│   │   └── ls.R
+│   └── rename/
+│       └── rename.R
 ├── test
+│   └── test_ls.R
+│   └── test_rename.R
+├── control.sh
 ├── README.md
 ├── LICENSE
 └── .gitignore

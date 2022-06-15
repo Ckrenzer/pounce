@@ -7,10 +7,10 @@ printf "You can effectively remove Pounce by commenting out the Pounce source ca
 # Wrappers
 # Custom version of the `ls` command
 function ls(){
-  rscript "${POUNCEPATH}/src/ls/ls.R" "${COLUMNS}" "$@"
+  rscript "${POUNCEPATH}/src/ls/ls.R" "${POUNCEPATH}" "${COLUMNS}" "$@"
 }
 
 # Renames files based on a fixed pattern
 function rename(){
-  rscript "${POUNCEPATH}/src/rename/rename.R" "$@"
+  rscript "${POUNCEPATH}/src/rename/rename.R" "${POUNCEPATH}" "$@"
 }

@@ -1,0 +1,27 @@
+Renames files in the working directory based on a fixed pattern.
+The order in which the arguments are provided does not matter.
+
+
+
+Options:
+  --help            Prints this help page.
+
+  <<pattern>>       The pattern to replace (no regular expressions--fixed patterns only).
+      Note: If pattern contains spaces, put the pattern in quotes, "".
+
+  <<replacement>>   The characters to replace with matches in 'pattern'.
+      Note: If replacement contains spaces, put the replacement in quotes, "".
+      Note: All pattern matches in a file's name are replaced.
+      Note: To remove a pattern, supply "" as the replacement argument.
+
+
+
+Usage:
+  Remove all instances of " (1)" in file names
+      rename " (1)" ""
+
+  Replace "2022-06-18 Photos.png" with "June 18th 2022 Photos.png"
+      rename 2022-06-18 "June 18th 2022"
+
+  Convert .R files to .txt files
+      rename .R .txt

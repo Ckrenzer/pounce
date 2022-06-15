@@ -91,8 +91,11 @@ determine_message <- function(data, relative_path){
 
 # Interpret Arguments ---------------------------------------------------------
 args <- commandArgs(trailingOnly = TRUE)
+# The path to pounce is always the first argument passed.
+POUNCEPATH <- args[[1]]
+args <- args[-1]
 
-# Determine the width of the terminal (it should be the first parameter passed)
+# Determine the width of the terminal (it should be the second parameter passed)
 # and then remove it from the args (to avoid interfering with the identification
 # of other parameters).
 width <- as.integer(args[[1]])
@@ -105,7 +108,7 @@ if(length(args) == 0) args <- ""
 # The help page.
 if(any(args == "--help")){
   # Give an overview of the function.
-  cat(readLines("help/ls.txt"), sep = "\n")
+  cat(readLines(paste(POUNCEPATH, "help/ls.txt", sep = "/")), sep = "\n")
   # Terminate R session.
   q(save = "no")
 }

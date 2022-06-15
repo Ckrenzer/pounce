@@ -1,5 +1,6 @@
+# About -----------------------------------------------------------------------
 # Author: Connor Krenzer
-# Contact: ckrenzer.info@gmail.com
+# Contact: Ckrenzer.info@gmail.com
 # Date: 6/14/2022
 # Description:
 #   Replaces a fixed pattern in a file name.
@@ -9,8 +10,22 @@
 #   and the desired pattern will be caught with grep().
 
 
-params <- commandArgs(trailingOnly = TRUE)
-inputs <- tail(params, 2)
+# Interpret Arguments ---------------------------------------------------------
+args <- commandArgs(trailingOnly = TRUE)
+POUNCEPATH <- args[[1]]
+args <- args[-1]
+
+# The help page.
+if(any(args == "--help")){
+  # Give an overview of the function.
+  cat(readLines(paste(POUNCEPATH, "help/rename.txt", sep = "/")), sep = "\n")
+  # Terminate R session.
+  q(save = "no")
+}
+
+
+# Rename Files ---------------------------------------------------------------
+inputs <- tail(args, 2)
 cat("\nFiles renamed from:\n")
 files_to_rename <- base::list.files(path = getwd(), full.names = FALSE)
 files_to_rename <- grep(x = files_to_rename, pattern = inputs[1], fixed = TRUE, value = TRUE)
