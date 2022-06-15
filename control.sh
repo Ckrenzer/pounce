@@ -9,3 +9,8 @@ printf "You can effectively remove Pounce by commenting out the Pounce source ca
 function ls(){
   rscript "${POUNCEPATH}/src/ls/ls.R" "${COLUMNS}" "$@"
 }
+
+# Renames files based on a fixed pattern
+function rename(){
+  rscript "${POUNCEPATH}/src/rename/rename.R" "$@"
+}
