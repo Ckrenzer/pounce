@@ -12,6 +12,7 @@
 
 # Interpret Arguments ---------------------------------------------------------
 args <- commandArgs(trailingOnly = TRUE)
+# The path to pounce is always the first argument passed.
 POUNCEPATH <- args[[1]]
 args <- args[-1]
 
