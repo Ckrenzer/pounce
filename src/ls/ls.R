@@ -135,9 +135,10 @@ patt <- set_default_values(arg = patt, default_value = "")
 # For whatever reason, list.files() still returns directory names after
 # setting `include.dirs =` to FALSE.
 dirs <- basename(list.dirs(path = subdir, recursive = FALSE))
-files <- setdiff(list.files(path = subdir, pattern = patt, include.dirs = FALSE), dirs)
-# Filter down to only those files and directories matching the pattern.
 dirs <- grep(x = dirs, pattern = patt, value = TRUE)
+files <- list.files(path = subdir, include.dirs = FALSE)
+files <- grep(x = files, pattern = patt, value = TRUE)
+files <- setdiff(files, dirs)
 
 
 # Print -----------------------------------------------------------------------
