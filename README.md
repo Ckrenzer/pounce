@@ -1,28 +1,29 @@
 # Pounce
-Provides custom command line functions tailored to the maintainer's liking.
-Though the maintainer created it for himself, the *pounce* command line extensions are for everyone!
+Custom command line functions tailored to the maintainer's liking.
 
 # Getting Started
-## Prerequisites
-1. Install R. See [Download and Install R](https://cloud.r-project.org/) (Windows users: https://cloud.r-project.org/bin/windows/base/).
-1. Add *rscript.exe* to an environment variable. (Windows users: Search 'Edit environment variables for your account' then hit ENTER. Then click 'Environment Variables...'. Then--under 'User variables for {{USERNAME}}'--click on the 'Path' variable, then click 'Edit...'. Click 'New...' then click 'Browse...'. Navigate to 'path-to-r\R\R-#.#.#\bin' and click 'Ok'.)
+## Dependencies
+1. The programming language R must be installed and added to the System Path.
+    - Install R. See [Download and Install R](https://cloud.r-project.org/) (Windows users: https://cloud.r-project.org/bin/windows/base/).
+    - Add *rscript.exe* to an environment variable. (Windows users: Search 'Edit environment variables for your account' then hit ENTER. Then click 'Environment Variables...'. Then--under 'User variables for {{USERNAME}}'--click on the 'Path' variable, then click 'Edit...'. Click 'New...' then click 'Browse...'. Navigate to 'path-to-r\R\R-#.#.#\bin' and click 'Ok'. You could greatly simplify this process by using chocolatey.)
 
 ## Installation
-Open BASH to the location you'd like to clone the repo and then paste the following commands into the terminal:
-```bash
-# Clone the repo
-git clone https://github.com/Ckrenzer/pounce.git;
-cd pounce;
-POUNCEPATH=${PWD};
+Clone this repo onto your device and add the path to the cloned directory
+to your bashrc file.
 
-# Store absolute path to pounce, source line control.sh to .bashrc if they are not already in .bashrc
-cd ~
-BASHRCFILE=".bashrc"
-if [ ! -f "$BASHRCFILE" ]; then
-    touch .bashrc
-fi
-grep -qxF "POUNCEPATH=\"${POUNCEPATH}\"" .bashrc || echo "POUNCEPATH=\"${POUNCEPATH}\"" >> .bashrc;
-grep -qxF 'source "${POUNCEPATH}/control.sh"' .bashrc || echo 'source "${POUNCEPATH}/control.sh"' >> .bashrc
+Pasting the following lines below will clone the
+repo into `~/.local/shell_extensions`:
+```bash
+# Clone the repo into ~/.local/shell_extensions
+mkdir -p ~/.local/shell_extensions
+cd ~/.local/shell_extensions
+git clone https://github.com/Ckrenzer/pounce.git;
+```
+To add *pounce* functionality to your bash shell,
+add the following lines to your .bashrc file:
+```bash
+POUNCEPATH="~/.local/shell_extensions/pounce";
+source ${POUNCEPATH}/control.sh;
 ```
 
 Once this is done, open a new instance of BASH, and these functions are ready to go!
@@ -30,7 +31,12 @@ Once this is done, open a new instance of BASH, and these functions are ready to
 ## Updating Pounce
 
 Just do an occasional `git pull` and you'll receive new functionality as it's developed!
-
+```bash
+# This'll do the trick
+cd ~/.local/shell_extensions/pounce
+git pull
+cd -
+```
 
 # Commands
 *Note: All commands have a help option. Type `command --help` to view it's help page.*
@@ -43,8 +49,8 @@ Just do an occasional `git pull` and you'll receive new functionality as it's de
 # Known Bugs and Issues
 
 The installation commands will break in the event the repo was cloned twice and installed in a new directory.
-This is due to the .bashrc file requiring `$POUNCEPATH` to be defined before the call to `source`. 
-To fix this, simply remove the `POUNCEPATH="path/to/pounce"` and `source "${POUNCEPATH}/control.sh"` lines from the .bashrc file before performing a second installation.
+This is due to the bashrc file requiring `$POUNCEPATH` to be defined before the call to `source`. 
+To fix this, simply remove the `POUNCEPATH="path/to/pounce"` and `source "${POUNCEPATH}/control.sh"` lines from the bashrc file before performing a second installation.
 
 
 
